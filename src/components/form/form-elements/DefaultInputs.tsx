@@ -9,10 +9,12 @@ import Select from "../Select";
 import { ChevronDownIcon } from "@/icons";
 
 type FormData = {
+  id: number;
   name: string;
   role: string;
   projectName: string;
   status: string;
+  salary: number;
 };
 
 export default function DefaultInputs() {
@@ -40,7 +42,7 @@ export default function DefaultInputs() {
           <Label>Complete Name</Label>
           <Input
             type="text"
-            placeholder="Complete Name"
+            placeholder="John Doe"
             register={register}
             name="name"
           />
@@ -88,6 +90,18 @@ export default function DefaultInputs() {
           </div>
           {errors.status && (
             <p className="text-sm text-red-500">{errors.status.message}</p>
+          )}
+        </div>
+        <div>
+          <Label>Salary</Label>
+          <Input
+            type="number"
+            placeholder="Software Engineer"
+            register={register}
+            name="salary"
+          />
+          {errors.role && (
+            <p className="text-sm text-red-500">{errors.role.message}</p>
           )}
         </div>
         <button
